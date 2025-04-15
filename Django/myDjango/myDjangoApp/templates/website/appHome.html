@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+
+{% block title %} App Home Page {% endblock %}
+
+{% block content %}
+  <header class="bg-gray-800 text-white text-center py-6">
+    <h1 class="text-3xl font-semibold">Welcome to App Home Page</h1>
+  </header>
+
+  <main class="py-8 text-center">
+    <p class="text-lg text-gray-600">This is a beautifully styled homepage for your project. Explore and add amazing features as you grow!</p>
+  </main>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+    {% for user in users %}
+      <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+        <img src="{{ user.image.url }}" alt="{{ user.name }}" class="w-20 h-20 rounded-full border-2 border-gray-300">
+        <p class="mt-4 text-xl font-semibold text-gray-800">{{ user.name }}</p>
+        <p class="mt-2 text-lg text-gray-600">{{ user.type }}</p>
+        <p class="mt-2 text-lg text-gray-600">{{ user.time }}</p>
+        <p class="mt-2 text-lg text-gray-600">{{ user.description }}</p>
+        <a href="{% url 'appDescription' user.id %}">
+          <button class="mt-4 bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-400 transition duration-300">View Details</button>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+
+  <footer class="bg-gray-800 text-white text-center py-4">
+    <p>&copy; 2025 My Project. All rights reserved.</p>
+  </footer>
+{% endblock %}

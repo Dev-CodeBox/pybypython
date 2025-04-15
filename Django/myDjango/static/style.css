@@ -1,0 +1,86 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f9f9f9;
+  overflow-x: hidden; /* Prevent horizontal scroll from animations */
+}
+
+/* Header Section */
+.header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px 0;
+  animation: fadeInDown 1.5s ease-out; /* Animation for header */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Main Content Section */
+.main-content {
+  padding: 40px 20px;
+  animation: fadeInUp 1.5s ease-out; /* Animation for main content */
+}
+
+.main-content p {
+  line-height: 1.8;
+  color: #555;
+  font-size: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Footer Section */
+.footer {
+  background-color: #f1f1f1;
+  color: #333;
+  padding: 10px 0;
+  margin-top: 20px;
+  font-size: 14px;
+  animation: fadeIn 2s ease-in; /* Animation for footer */
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Button Hover Effect (if you add links later) */
+button, a {
+  text-decoration: none;
+  color: #4244ce;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover, a:hover {
+  color: #333;
+  transform: scale(1.05);
+}

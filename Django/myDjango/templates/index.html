@@ -1,0 +1,30 @@
+{% load static tailwind_tags %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} Default Title {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    {% tailwind_css %}
+    <!-- Linking external CSS -->
+  </head>
+  <body>
+    {% block content %}
+    <header class="header">
+      <h1>Welcome to Default Page</h1>
+    </header>
+
+    <main class="main-content">
+      <p>
+        This is a beautifully styled homepage for your project. Explore and add
+        amazing features as you grow!
+      </p>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2025 My Project. All rights reserved.</p>
+    </footer>
+    {% endblock %}
+  </body>
+</html>

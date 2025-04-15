@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+{% block title %} Book Store Home {% endblock %}
+{% block content %}
+  <header class="bg-blue-900 text-white text-center py-6">
+    <h1 class="text-4xl font-bold">Welcome to Our Book Store</h1>
+    <p class="text-lg text-gray-300 mt-2">Find your next great read today!</p>
+  </header>
+
+  <main class="py-10 px-6">
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% for book in books %}
+        <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
+          <img src="{{ book.image.url }}" alt="{{ book.name }}" class="w-40 h-56 object-cover rounded-md border border-gray-300">
+          <h2 class="mt-4 text-2xl font-semibold text-gray-800">{{ book.name }}</h2>
+          <p class="mt-2 text-lg text-gray-600 font-medium">{{ book.author }}</p>
+          <p class="mt-2 text-sm text-gray-500">{{ book.stream }}</p>
+          <p class="mt-2 text-md font-bold text-green-600">{{ book.details }}</p>
+          <a href="{% url 'detail' book.id %}">
+            <button class="mt-4 bg-blue-600 text-white py-2 px-6 rounded-md hover:bg-blue-500 transition duration-300">View Details</button>
+          </a>
+        </div>
+      {% endfor %}
+    </section> 
+  </main>
+
+  <footer class="bg-blue-900 text-white text-center py-4 mt-10">
+    <p>&copy; 2025 Book Store. All rights reserved.</p>
+  </footer>
+{% endblock %}

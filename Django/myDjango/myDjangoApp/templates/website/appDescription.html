@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+{% block title %} App Description Page {% endblock %}
+{% block content %}
+
+<header class="text-center py-6">
+  <h1 class="text-3xl font-bold text-gray-900">Welcome to App Description Page</h1>
+</header>
+
+<main class="max-w-3xl mx-auto p-6">
+  <p class="text-gray-700 text-lg text-center">
+    This is a beautifully styled Description for your project. Explore and add
+    amazing features as you grow!
+  </p>
+</main>
+
+<div class="max-w-lg mx-auto bg-white shadow-md rounded-xl p-6 border border-gray-200">
+  <p class="text-gray-800 text-lg font-medium">
+    {{ user.description }}
+  </p>
+</div>
+
+<footer class="text-center py-6 text-gray-600">
+  <p>&copy; 2025 My Project. All rights reserved.</p>
+</footer>
+
+{% endblock %}
